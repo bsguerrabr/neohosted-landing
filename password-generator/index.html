@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1998KTG7Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z1998KTG7Q');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9073958936406623" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f1419;
+            color: #e7e9ea;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1a1f26;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #2f3640;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .password-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #252b34;
+            border-radius: 8px;
+            border: 2px solid #2f3640;
+        }
+
+        #password {
+            flex: 1;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 1.3rem;
+            word-break: break-all;
+            color: #e7e9ea;
+        }
+
+        #copyBtn {
+            background: #58a6ff;
+            color: #0f1419;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        #copyBtn:hover {
+            background: #79b8ff;
+        }
+
+        #copyBtn:active {
+            transform: scale(0.98);
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #a0a8b0;
+            font-weight: 500;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #lengthSlider {
+            flex: 1;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #2f3640;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        #lengthSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            background: #58a6ff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #lengthSlider::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            background: #58a6ff;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        #lengthValue {
+            min-width: 45px;
+            text-align: center;
+            font-weight: bold;
+            color: #e7e9ea;
+            font-size: 1.1rem;
+        }
+
+        .checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #58a6ff;
+        }
+
+        .checkbox-item span {
+            color: #a0a8b0;
+            font-size: 1rem;
+        }
+
+        .donate-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #2f3640;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+
+        <div class="password-display">
+            <span id="password"></span>
+            <button id="copyBtn">Copy</button>
+        </div>
+
+        <div class="control-group">
+            <label>Password length</label>
+            <div class="slider-container">
+                <input type="range" id="lengthSlider" min="1" max="50" value="16">
+                <span id="lengthValue">16</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>Character types</label>
+            <div class="checkboxes">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="includeLetters" checked>
+                    <span>Letters</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="includeNumbers" checked>
+                    <span>Numbers</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="includeSymbols" checked>
+                    <span>Symbols</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="donate-section">
+            <a href="https://coindrop.to/bsguerrabr" target="_blank"><img src="donate_button.png" alt="Please don't buy me a coffee" style="max-width:100%;height:auto;border-radius:6px;" /></a>
+        </div>
+
+    </div>
+
+    <script>
+        const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        const NUMBERS = '0123456789';
+        const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+        const passwordEl = document.getElementById('password');
+        const copyBtn = document.getElementById('copyBtn');
+        const lengthSlider = document.getElementById('lengthSlider');
+        const lengthValue = document.getElementById('lengthValue');
+        const includeLetters = document.getElementById('includeLetters');
+        const includeNumbers = document.getElementById('includeNumbers');
+        const includeSymbols = document.getElementById('includeSymbols');
+
+        function getSecureRandomIndex(max) {
+            const array = new Uint32Array(1);
+            crypto.getRandomValues(array);
+            return array[0] % max;
+        }
+
+        function generatePassword() {
+            let charset = '';
+
+            if (includeLetters.checked) charset += LETTERS;
+            if (includeNumbers.checked) charset += NUMBERS;
+            if (includeSymbols.checked) charset += SYMBOLS;
+
+            if (charset === '') {
+                passwordEl.textContent = '';
+                return;
+            }
+
+            const length = parseInt(lengthSlider.value);
+            let password = '';
+
+            for (let i = 0; i < length; i++) {
+                const randomIndex = getSecureRandomIndex(charset.length);
+                password += charset[randomIndex];
+            }
+
+            passwordEl.textContent = password;
+        }
+
+        function ensureAtLeastOneChecked(changedCheckbox) {
+            const checkboxes = [includeLetters, includeNumbers, includeSymbols];
+            const checkedCount = checkboxes.filter(cb => cb.checked).length;
+
+            if (checkedCount === 0) {
+                changedCheckbox.checked = true;
+            }
+        }
+
+        lengthSlider.addEventListener('input', () => {
+            lengthValue.textContent = lengthSlider.value;
+            generatePassword();
+        });
+
+        includeLetters.addEventListener('change', () => {
+            ensureAtLeastOneChecked(includeLetters);
+            generatePassword();
+        });
+
+        includeNumbers.addEventListener('change', () => {
+            ensureAtLeastOneChecked(includeNumbers);
+            generatePassword();
+        });
+
+        includeSymbols.addEventListener('change', () => {
+            ensureAtLeastOneChecked(includeSymbols);
+            generatePassword();
+        });
+
+        copyBtn.addEventListener('click', async () => {
+            const password = passwordEl.textContent;
+            if (password) {
+                try {
+                    await navigator.clipboard.writeText(password);
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 1500);
+                } catch (err) {
+                    alert('Could not copy password. Please select and copy manually.');
+                }
+            }
+        });
+
+        generatePassword();
+    </script>
+</body>
+</html>

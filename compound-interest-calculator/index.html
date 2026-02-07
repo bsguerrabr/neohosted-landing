@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1998KTG7Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z1998KTG7Q');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9073958936406623" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Compound Interest Calculator</h1>
+
+        <div class="calculator">
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="initialValue">Initial Value ($)</label>
+                    <input type="text" id="initialValue" value="10,000" inputmode="numeric">
+                </div>
+
+                <div class="form-group">
+                    <label for="monthlyValue">Monthly Contribution ($)</label>
+                    <input type="text" id="monthlyValue" value="500" inputmode="numeric">
+                </div>
+
+                <div class="form-group">
+                    <label for="interestRate">Interest Rate (%)</label>
+                    <div class="input-with-select">
+                        <input type="number" id="interestRate" value="10" min="0" step="0.1">
+                        <select id="rateType">
+                            <option value="annual">Annual</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="period">Period</label>
+                    <div class="input-with-select">
+                        <input type="number" id="period" value="5" min="1" step="1">
+                        <select id="periodType">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results">
+                    <div class="result-item">
+                        <span class="result-label">Total Invested:</span>
+                        <span class="result-value" id="totalInvested">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Interest:</span>
+                        <span class="result-value" id="totalInterest">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Final Amount:</span>
+                        <span class="result-value" id="finalAmount">-</span>
+                    </div>
+                </div>
+
+                <div class="paypal-donate">
+                    <a href="https://coindrop.to/bsguerrabr" target="_blank"><img src="donate_button.png" alt="Please don't buy me a coffee" style="max-width:100%;height:auto;border-radius:6px;" /></a>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
