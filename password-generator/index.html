@@ -38,6 +38,22 @@
             padding: 20px;
         }
 
+        .home-link {
+            position: fixed;
+            top: 16px;
+            left: 20px;
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .home-link:hover {
+            opacity: 1;
+        }
+
         .container {
             background: #1a1f26;
             padding: 40px;
@@ -185,6 +201,10 @@
     </style>
 </head>
 <body>
+    <a href="https://neohosted.com/" class="home-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        neohosted
+    </a>
     <div class="container">
         <h1>Password Generator</h1>
 
